@@ -1,2 +1,0 @@
-# DEVATT_TIF-5170411388
-Tugas_edmodo

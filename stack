@@ -1,0 +1,122 @@
+# DEVATT_TIF-5170411388
+Tugas_edmodo
+#include <iostream>
+#include <string>
+using namespace std;
+#define MAX_CAP 3
+typedef struct {
+	int no;
+	char nama_depan[30];
+	float nilai;
+}
+Mahasiswa;
+
+typedef struct{
+	int tos;
+	Pemain stack_array[MAX_CAP];
+}
+StackRecord;
+typedef StackRecord Stack;
+void initStack(Stack &s)
+{
+	s.tos=-1;
+}
+int isEmpty(Stack s){
+	return s.tos==-1;
+}
+int isFull(Stack s){
+	return s.tos == MAX_CAP - 1;
+}
+Pemain whoseOnTop(Stack s)
+{
+	return s.stack_array[s.tos];
+}
+void push (Stack &s, Pemain val){
+if (isFull(s))
+	cout<<"stack overflow ..... ";
+else {/
+	s.tos++;
+	s.stack_array[s.tos] = val;
+}
+}
+Pemain pop(Stack &s){
+Pemain temp;
+if (isEmpty(s))
+	cout<<"stack underflow.....";
+else {
+	temp =s.stack_array[s.tos];
+	s.tos--;
+	return temp;
+}
+}
+void ShowStackElements (Stack s)
+{
+	 Pemain temp;
+	 if (isEmpty(s))
+		 cout<<"/nstack masih kosong .....";
+	 else {
+		 while (!isEmpty(s)){
+			 temp = s.stack_array[s.tos];
+			 s.tos--;
+			 cout<<"\n";
+			 cout<<"\n No : "<< temp.no;
+			 cout<<"\n Nama Depan Pemain :" <<temp.nama_depan;
+			 cout<<"\n Nilai Pemain :"<< temp.Nilai<<endl;
+		 }
+	 }
+}
+
+int main()
+{
+      int val, pilih=0;
+      Stack mystack;
+	  initStack(mystack);
+
+do
+{
+      cout<<" 1. Tambah Pemain             "<<endl;
+      cout<<" 2. Hapus Pemain              "<<endl;
+      cout<<" 3. Tampil Pemain             "<<endl;
+	  cout<<" 4. Tampil Pemain on Top      "<<endl;
+	  cout<<" 5. Keluar Program               "<<endl;cin>>pilih;
+
+		  if (isEmpty)
+			  {
+				  cout<<"KOSONG"<<endl;
+			  }
+			  else
+			  {
+				for(int i=s.tos; i>=0; i--)
+					{
+						  cout<<"["<<s.stack_array[s.tos]<<"]";
+					}
+					cout<<endl;
+			  }
+			  cout<<endl;*/
+      cout<<" Masukan Pilihan :";cin>>pilih;
+      switch (pilih)
+      {
+            case 1:
+                push (mystack,s.stack_array[MAX_CAP]);
+            break;
+            case 2:
+               pop(mystack);
+            break;
+            case 3:
+				ShowStackElements (mystack);
+            break;
+	case 4:
+				whoseOnTop(mystack);
+				break;
+	case 5:
+		cout<<"OUT PROGRAM";
+			break;
+            default:
+                cout<<"ERROR!"<<endl<<endl;
+            break;
+      }
+}
+while (pilih!=5);
+}
+
+
